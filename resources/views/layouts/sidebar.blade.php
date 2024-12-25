@@ -29,73 +29,17 @@
             </li>
         @endif
         <li class="menu-item">
-            <a href="{{ route('services')}}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('services')) active-parent-link @endif">
+            <a href="{{ route('docs')}}"
+                class="menu-link cairo-semi-bold @if (request()->routeIs('docs')) active-parent-link @endif">
                 <i class="menu-icon tf-icons mdi  mdi mdi-face-agent"></i>
-                <div>الخدمات</div>
+                <div>docs</div>
             </a>
         </li>
         <li class="menu-item">
-            <a href="{{ route('packages') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('packages')) active-parent-link @endif">
-                <i class="menu-icon tf-icons  mdi mdi-cash-100"></i>
-                <div>الباقات</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('news') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('news')) active-parent-link @endif">
+            <a href="{{ route('companies') }}"
+                class="menu-link cairo-semi-bold @if (request()->routeIs('companies')) active-parent-link @endif">
                 <i class="menu-icon tf-icons mdi  mdi mdi-newspaper"></i>
-                <div> الاخبار</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('customer.experience') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('customer.experience')) active-parent-link @endif">
-                <i class="menu-icon tf-icons mdi mdi-badge-account-horizontal"></i>
-                <div> تجارب العملاء</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('general.features') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('general.features')) active-parent-link @endif">
-                <i class="menu-icon tf-icons mdi mdi-badge-account-horizontal"></i>
-                <div> لماذا انظمتنا </div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('comments') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('comments')) active-parent-link @endif">
-                <i class="menu-icon tf-icons mdi  mdi mdi-comment-text-multiple"></i>
-                <div> التعليقات</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('subscribes') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('subscribes')) active-parent-link @endif">
-                <i class="menu-icon tf-icons mdi  mdi mdi-playlist-check"></i>
-                <div> الاشتراكات</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('contact.us') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('contact.us')) active-parent-link @endif">
-                <i class="menu-icon tf-icons mdi  mdi mdi-message-bulleted"></i>
-                <div>اتصل بنا</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('about.site') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('about.site')) active-parent-link @endif">
-                <i class="menu-icon tf-icons mdi  mdi mdi-search-web"></i>
-                <div> حول الموقع</div>
-            </a>
-        </li>
-        <li class="menu-item">
-            <a href="{{ route('about.us') }}"
-                class="menu-link cairo-semi-bold @if (request()->routeIs('about.us')) active-parent-link @endif">
-                <i class="menu-icon tf-icons mdi  mdi mdi-information"></i>
-                <div> حولنا </div>
+                <div> companies</div>
             </a>
         </li>
     </ul>

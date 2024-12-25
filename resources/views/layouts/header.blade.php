@@ -70,13 +70,13 @@ function logout()
                             <span class="align-middle cairo-semi-bold">الملف الشخصي</span>
                         </a>
                     </li>
-                    {{-- <li>
-                        <button class="dropdown-item text-danger" type="button" wire:click='{{Illuminate\Support\Facades\Auth::logout()}}'> <i
+                    <li>
+                        <button class="dropdown-item text-danger" type="button"> <i
                                 class="mdi mdi-logout me-2"></i>
                             <span class="align-middle cairo-semi-bold"> تسجيل
                                 الخروج</span>
                         </button>
-                    </li> --}}
+                    </li>
                 </ul>
             </li>
         </ul>
