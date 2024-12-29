@@ -7,7 +7,7 @@ function logout()
 }
 
 ?>
-<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+<nav style="width: 100% !important; border-radius: 0px !important;" class="layout-navbar   navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
     id="layout-navbar"
     style="background-color: #fff !important; z-index:100 !important; @if (auth()->user()->role == 3) right:0px @endif">
     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -15,7 +15,7 @@ function logout()
             <i class="mdi mdi-menu mdi-24px"></i>
         </a>
     </div>
-    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+    <div style="width: 100% !important;" class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             @php
                 $user = auth()->user();

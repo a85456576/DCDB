@@ -16,12 +16,9 @@
 </head>
 
 <body class="main-body app sidebar-gone rtl">
-    <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-wrapper ">
         <div class="layout-container">
-            @if (auth()->user()->role != 3)
-                @include('layouts.sidebar')
-            @endif
-            <div class="layout-page @if(auth()->user()->role == 3) p-0 @endif">
+            <div class="layout-page p-0">
                 @include('layouts.header')
                 <div class="content-wrapper">
                     <div class="container-xxl flex-grow-1 container-p-y" style="padding-inline: 14px;">

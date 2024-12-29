@@ -1,6 +1,6 @@
 @section('title','المشرفين')
 <div>
-    @if (auth()->user()->role === 1)
+    {{-- @if (auth()->user()->role === 1) --}}
         <div class="container-fluid">
             <div class='title-space'>
                 <h3 class="cairo-bold">المشرفين</h3>
@@ -43,5 +43,5 @@
                 @livewire('supervisors.edit-modal')
             </div>
         </div>
-    @endif
+    {{-- @endif --}}
 </div>
