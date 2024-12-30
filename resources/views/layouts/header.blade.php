@@ -8,7 +8,7 @@ function logout()
 
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<nav style="width: 100% !important; border-radius: 0px !important;" class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white  px-3"
+<nav style="width: 100% !important; border-radius: 0px !important;" class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white pt-3 pb-3 px-3"
     id="layout-navbar"
     style="background-color: #fff !important; z-index:100 !important; @if (auth()->user()->role == 3) right:0px @endif">
     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -28,7 +28,8 @@ function logout()
         <div class="d-flex gap-2">
             <button class="btn text-black fs-5 px-0" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
-                onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';">
+                onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
+                data-bs-target="#notePage">
                 <i class="bi bi-sticky"></i>
             </button>
         </div>
@@ -37,7 +38,7 @@ function logout()
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             @php
                 $user = auth()->user();
-            @endphp 
+            @endphp
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow d-flex" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="d-flex align-items-center text-end">

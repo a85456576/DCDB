@@ -28,10 +28,11 @@
         $("#addModal").modal('hide');
         $("#editModal").modal('hide');
         $("#filterModal").modal('hide');
+        $("#notePage").modal('hide');
         $("#editDetailsModal").modal('hide');
         $("#removeModal").modal('hide');
         $("#profileModal").modal('hide');
     });
-    
+
 </script>
 @yield('js')
