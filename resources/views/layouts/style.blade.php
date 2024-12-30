@@ -22,7 +22,6 @@
 {{-- CKEditor Links --}}
 <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.3.0/ckeditor5.css" />
 <link rel="stylesheet"
-    href="https://cdn.ckeditor.com/ckeditor5-premium-features/43.3.0/ckeditor5-premium-features.css" />
-
+href="https://cdn.ckeditor.com/ckeditor5-premium-features/43.3.0/ckeditor5-premium-features.css" />
 @yield('css')
 @livewireStyles

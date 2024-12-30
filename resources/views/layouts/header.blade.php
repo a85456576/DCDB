@@ -7,14 +7,32 @@ function logout()
 }
 
 ?>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <nav style="width: 100% !important; border-radius: 0px !important;" class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white  px-3"
     id="layout-navbar"
     style="background-color: #fff !important; z-index:100 !important; @if (auth()->user()->role == 3) right:0px @endif">
-    <!-- <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
             <i class="mdi mdi-menu mdi-24px"></i>
         </a>
-    </div> -->
+    </div>
+    <!--  todo btn , not btn  -->
+    <div class="d-flex gap-4 px-2">
+        <div class="d-flex gap-2">
+            <button class="btn text-black fs-5 px-0" type="button"
+                onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
+                onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';">
+                <i class="bi bi-list-check"></i>
+            </button>
+        </div>
+        <div class="d-flex gap-2">
+            <button class="btn text-black fs-5 px-0" type="button"
+                onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
+                onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';">
+                <i class="bi bi-sticky"></i>
+            </button>
+        </div>
+    </div>
     <div style="width: 100% !important;" class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             @php
@@ -22,6 +40,12 @@ function logout()
             @endphp
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow d-flex" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="d-flex align-items-center text-end">
+                        <div class="me-2">
+                            <span class="fw-bold d-block">{{ auth()->user()->name }}</span>
+                            <small class="text-muted">{{ auth()->user()->email }}</small>
+                        </div>
+                    </div>
                     <div class="avatar avatar-online d-flex flex-1 ">
                         @if (!empty($user->profile->photo))
                             <img src="{{ asset('/public/public/storage/profileImages/' . $user->profile->photo) }}"
@@ -30,12 +54,6 @@ function logout()
                                 <img src="{{ asset('assets/img/avatars/1.png') }}" alt="profile image"
                                 class="w-px-40 h-auto rounded-circle" />
                         @endif
-                    </div>
-                    <div class="d-flex align-items-center text-end">
-                        <div class="me-2">
-                            <span class="fw-bold d-block">{{ auth()->user()->name }}</span>
-                            <small class="text-muted">{{ auth()->user()->email }}</small>
-                        </div>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -87,28 +105,6 @@ function logout()
             </li>
         </ul>
     </div>
-    <div class="navbar-search-wrapper search-input-wrapper d-none">
-        <input type="text" class="form-control search-input container-xxl border-0" placeholder="Search..."
-            aria-label="Search..." />
-        <i class="mdi mdi-close search-toggler cursor-pointer"></i>
-    </div>
 </nav>
-
-
-
-
-
-
-<!-- <nav style="width: 100% !important; border-radius: 0px !important;" class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white  px-3" >
-
-    client image , email and name
-    <div class="d-flex align-items-center text-end">
-        <div class="me-2">
-            <span class="fw-bold d-block">{{ auth()->user()->name }}</span>
-            <small class="text-muted">{{ auth()->user()->email }}</small>
-        </div>
-        <img src="{{ asset('assets/img/avatars/1.png') }}" alt="User Avatar" width="40" height="40" class="rounded-circle">
-    </div>
-</nav> -->
 
 
