@@ -37,7 +37,7 @@ function logout()
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             @php
                 $user = auth()->user();
-            @endphp
+            @endphp 
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow d-flex" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="d-flex align-items-center text-end">
