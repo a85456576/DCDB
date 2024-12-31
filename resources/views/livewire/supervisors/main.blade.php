@@ -5,7 +5,7 @@
         <div>
             <form class="d-flex mb-3" role="search">
                 <div class="d-flex gap-2">
-                    <button class="btn text-success fs-3" type="button" data-bs-toggle="modal" data-bs-target="#addSupervisorModal" onclick="showAddModal()">
+                    <button class="btn text-success fs-3" type="button" data-bs-toggle="modal" data-bs-target="#addModal">
                         <i class="bi bi-plus-circle"></i>
                     </button>
                 </div>
@@ -30,10 +30,10 @@
         </div>
     </div>
     <!-- Modal component -->
-    <div id="addSupervisorModal" class="modal fade" aria-hidden="true">
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-hidden="true">
         @livewire('supervisors.add-modal')
     </div>
-    <div id="editModal" class="modal fade" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-hidden="true">
         @livewire('supervisors.edit-modal')
     </div>
 @endif
