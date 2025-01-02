@@ -17,11 +17,11 @@ class Main extends Component
     public function render()
     {
         if ($this->search) {
-            $this->supervisors = User::where('role', 2)
+            $this->supervisors = User::where('role_id', 2)
                 ->where('name', 'LIKE', '%' . $this->search . '%')
                 ->get();
         } else {
-            $this->supervisors = User::where('role', 2)->get();
+            $this->supervisors = User::where('role_id', 2)->get();
         }
         return view('livewire.supervisors.main');
     }

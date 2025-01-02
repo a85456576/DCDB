@@ -1,6 +1,6 @@
 @section('title', 'شركات')
 <div>
-@if (auth()->user()->role === 1)
+@if (auth()->user()->role_id === 1)
     <div>
         <div>
             <form class="d-flex mb-3" role="search">

@@ -31,7 +31,7 @@ class AddModal extends Component
             'email' => $this->email,
             'password' => Hash::make($this->password),
             'status' => 1,
-            'role' => 2,
+            'role_id' => 2,
         ]);
 
         $this->reset(['name', 'password', 'email']);

@@ -26,12 +26,13 @@ function logout()
             </button>
         </div>
         <div class="d-flex gap-2">
-            <button class="btn text-black fs-5 px-0" type="button"
+            <a class="btn text-black fs-5 px-0 dropdown-item modal-effect" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-                data-bs-target="#notePage">
+                data-bs-target="#notePage" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                href="#noteModal">
                 <i class="bi bi-sticky"></i>
-            </button>
+            </a>
         </div>
     </div>
     <div style="width: 100% !important;" class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
