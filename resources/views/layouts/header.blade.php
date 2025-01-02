@@ -10,18 +10,21 @@ function logout()
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <nav style="width: 100% !important; border-radius: 0px !important;" class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white pt-3 pb-3 px-3"
     id="layout-navbar"
-    style="background-color: #fff !important; z-index:100 !important; @if (auth()->user()->role == 3) right:0px @endif">
+    style="background-color: #fff !important; z-index:100 !important;">
     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
             <i class="mdi mdi-menu mdi-24px"></i>
         </a>
     </div>
-    <!--  todo btn , not btn  -->
+
+    <!-- الأيقونات -->
     <div class="d-flex gap-4 px-2">
+        <!-- أيقونة أخرى -->
         <div class="d-flex gap-2">
             <button class="btn text-black fs-5 px-0" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
-                onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';">
+                onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
+                data-bs-toggle="modal" data-bs-target="#noteModal">
                 <i class="bi bi-list-check"></i>
             </button>
         </div>
@@ -29,11 +32,12 @@ function logout()
             <button class="btn text-black fs-5 px-0" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-                data-bs-target="#notePage">
+                data-bs-toggle="modal" data-bs-target="#noteModal">
                 <i class="bi bi-sticky"></i>
             </button>
         </div>
     </div>
+
     <div style="width: 100% !important;" class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             @php
@@ -47,12 +51,12 @@ function logout()
                             <small class="text-muted">{{ auth()->user()->email }}</small>
                         </div>
                     </div>
-                    <div class="avatar avatar-online d-flex flex-1 ">
+                    <div class="avatar avatar-online d-flex flex-1">
                         @if (!empty($user->profile->photo))
                             <img src="{{ asset('/public/public/storage/profileImages/' . $user->profile->photo) }}"
                                 alt="profile image" class="w-px-40 h-auto rounded-circle" />
                         @else
-                                <img src="{{ asset('assets/img/avatars/1.png') }}" alt="profile image"
+                            <img src="{{ asset('assets/img/avatars/1.png') }}" alt="profile image"
                                 class="w-px-40 h-auto rounded-circle" />
                         @endif
                     </div>
@@ -96,10 +100,9 @@ function logout()
                         </a>
                     </li>
                     <li>
-                        <button class="dropdown-item text-danger" type="button"> <i
-                                class="mdi mdi-logout me-2"></i>
-                            <span class="align-middle cairo-semi-bold"> تسجيل
-                                الخروج</span>
+                        <button class="dropdown-item text-danger" type="button" onclick="logout()">
+                            <i class="mdi mdi-logout me-2"></i>
+                            <span class="align-middle cairo-semi-bold">تسجيل الخروج</span>
                         </button>
                     </li>
                 </ul>
@@ -108,4 +111,17 @@ function logout()
     </div>
 </nav>
 
-
+<!-- نافذة الملاحظات -->
+<div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noteModalLabel">صفحة الملاحظات</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @livewire('note.note')
+            </div>
+        </div>
+    </div>
+</div>
