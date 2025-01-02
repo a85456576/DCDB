@@ -19,14 +19,26 @@
         @endif
     </div>
 
-    <div class="fixed-bottom bg-light d-flex justify-content-between align-items-center px-3 py-2 border-top">
+    <!-- زر إضافة ملاحظة جديدة لفتح نافذة منبثقة -->
+    <div class="bg-light d-flex justify-content-between align-items-center px-3 py-2 border-top">
         <div>
-            <button class="btn text-success fs-3 px-0" type="button"
+            <button class="btn text-success fs-3 px-0" type="button" data-bs-toggle="modal" data-bs-target="#addNoteModal"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.1)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';">
                 <i class="bi bi-plus-circle"></i>
             </button>
             <span class="ms-2">إضافة ملاحظة جديدة</span>
+        </div>
+    </div>
+
+    <!-- نافذة منبثقة لإضافة ملاحظة جديدة -->
+    <div class="modal fade" id="addNoteModal" tabindex="-1" aria-labelledby="addNoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    @livewire('note.create-note')
+                </div>
+            </div>
         </div>
     </div>
 </div>
