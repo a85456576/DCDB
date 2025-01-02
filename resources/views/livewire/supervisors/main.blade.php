@@ -24,7 +24,7 @@
                             <img src="{{ asset('project_images/teamwork.png') }}" alt="" width="300"
                                 height="300">
                         </div>
-                        <h2 class="cairo-semi-bold fs-3 mt-2"> لايوجد مشرفين</h2>
+                        <h2 class="cairo-semi-bold fs-3 mt-2"> لايوجد مستخدمين</h2>
                     </div>
                 @endif
         </div>
