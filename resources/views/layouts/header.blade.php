@@ -32,12 +32,7 @@ function logout()
             <a class="btn text-black fs-5 px-0 dropdown-item modal-effect" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-<<<<<<< HEAD
-                data-bs-target="#notePage" data-bs-effect="effect-scale" data-bs-toggle="modal"
-                href="#noteModal">
-=======
                 data-bs-toggle="modal" data-bs-target="#noteModal">
->>>>>>> df6267ee7f0a3e35c598a3c9d3b2fa1e765a742b
                 <i class="bi bi-sticky"></i>
             </a>
         </div>
@@ -125,7 +120,7 @@ function logout()
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                @livewire('note.note')
+                @livewire('note.main')
             </div>
         </div>
     </div>
