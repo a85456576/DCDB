@@ -13,7 +13,7 @@
                 <button class="btn btn-outline-info" type="submit">Search</button>
             </form>
         </div>
-        <div class="d-flex flex-row flex-wrap text-black p-3 pb-5 rounded">
+        <div class="d-flex flex-row flex-wrap justify-content-center align-content-center text-black p-3 pb-5 rounded">
         @if ($supervisors->isNotEmpty())
                     @foreach ($supervisors as $supervisor)
                         @livewire('supervisors.details', ['supervisor' => $supervisor], key($supervisor->id))

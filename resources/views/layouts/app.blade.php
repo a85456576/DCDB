@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <div class="layout-overlay layout-menu-toggle"></div>
+       
     </div>
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-hidden="true">
