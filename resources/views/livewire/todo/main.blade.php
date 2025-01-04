@@ -6,23 +6,26 @@
         </div>
     </div>
 
-    <div class="text-center my-5 py-3">
-        @if (empty($notes))
-            <i class="bi bi-sticky text-secondary" style="font-size: 3rem;"></i>
-            <p class="text-secondary mt-3"> لا توجد اي مهام مضافة </p>
+    <div class="my-5 py-3">
+        @if (!empty($tasks))
+            <div class="text-center">
+                <i class="bi bi-sticky text-secondary" style="font-size: 3rem;"></i>
+                <p class="text-secondary mt-3">لا توجد اي مهام مضافة</p>
+            </div>
         @else
-            <ul class="list-group">
-                @foreach ($notes as $note)
-                    <li class="list-group-item">{{ $note['content'] }}</li>
-                @endforeach
-            </ul>
+            <div class="list-group">
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">new task</h5>
+                </div>
+            </div>
         @endif
     </div>
 
-    <!-- زر إضافة ملاحظة مهمه  -->
-    <div class="bg-light d-flex justify-content-between align-items-center px-3 py-2 rounded rounded-md border-top">
+    <!-- زر إضافة ملاحظة مهمة -->
+    <div class="bg-light d-flex justify-content-between align-items-center px-3 py-2 rounded border-top">
         <div>
-            <button class="btn text-success fs-3 px-0" type="button" data-bs-toggle="modal" data-bs-target="#addTodoModal"
+            <button class="btn text-success fs-3 px-0" type="button" data-bs-toggle="modal"
+                data-bs-target="#addTodoModal"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.1)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';">
                 <i class="bi bi-plus-circle"></i>
