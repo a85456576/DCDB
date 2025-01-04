@@ -10,13 +10,6 @@
                 <label for="title" class="form-label">اسم الملاحظة</label>
                 <input type="text" class="form-control" id="title" wire:model="title" placeholder="أدخل اسم الملاحظة" required>
             </div>
-
-            <!-- حقل تاريخ اليوم -->
-            <div class="mb-3">
-                <label for="date" class="form-label">التاريخ</label>
-                <input type="text" class="form-control" id="date" value="{{ \Carbon\Carbon::today()->toDateString() }}" readonly>
-            </div>
-
             <!-- حقل محتوى الملاحظة -->
             <div class="mb-3">
                 <label for="content" class="form-label">محتوى الملاحظة</label>
