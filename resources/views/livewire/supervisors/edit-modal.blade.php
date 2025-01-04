@@ -41,6 +41,35 @@
                         </div>
                     </div>
                 </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <label class="form-label cairo-bold">الصلاحيات</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="download">
+                            <label class="form-check-label" for="download">
+                                تنزيل
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="add">
+                            <label class="form-check-label" for="add">
+                                إضافة
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="delete">
+                            <label class="form-check-label" for="delete">
+                                حذف
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="edit">
+                            <label class="form-check-label" for="edit">
+                                تعديل
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer" dir="ltr">
                 <button class="btn ripple btn-danger cairo-semi-bold" data-bs-dismiss="modal"

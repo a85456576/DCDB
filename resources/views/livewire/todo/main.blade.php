@@ -15,7 +15,7 @@
         @else
             <div class="list-group">
                 <div class="list-group-item d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">new task</h5>
+                    <h5 class="mb-0"> مهمة جديدة</h5>
                 </div>
             </div>
         @endif
