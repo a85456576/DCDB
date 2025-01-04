@@ -19,7 +19,7 @@
     <div class="layout-wrapper">
         <div class="layout-container">
             <!-- إزالة sidebar إذا كان role مختلف عن 3 -->
-            @if (auth()->user()->role != 3)
+            @if (auth()->user()->role_id != 3)
                 <!-- لا يتم تضمين الـ sidebar هنا -->
             @endif
             <div class="layout-page p-0">
@@ -38,6 +38,10 @@
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-hidden="true">
         @livewire('profile.main')
     </div>
+    <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-hidden="true wire:ignore ">
+        @livewire('note.main')
+    </div>
+
     @include('layouts.script')
 </body>
 

@@ -15,17 +15,24 @@ function logout()
             <i class="mdi mdi-menu mdi-24px"></i>
         </a>
     </div>
-
-    <!-- الأيقونات -->
     <div class="d-flex gap-4 px-2">
-        <!-- أيقونة الملاحظات (تفتح السلايد الجانبي) -->
         <div class="d-flex gap-2">
             <button class="btn text-black fs-5 px-0" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
+
                 data-bs-toggle="offcanvas" data-bs-target="#noteSlide">
-                <i class="bi bi-sticky"></i>
+                data-bs-toggle="modal" data-bs-target="#noteModal">
+                <i class="bi bi-list-check"></i>
             </button>
+        </div>
+        <div class="d-flex gap-2">
+            <a class="btn text-black fs-5 px-0 dropdown-item modal-effect" type="button"
+                onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
+                onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
+                data-bs-toggle="modal" data-bs-target="#noteModal">
+                <i class="bi bi-sticky"></i>
+            </a>
         </div>
     </div>
 
@@ -101,15 +108,24 @@ function logout()
         </ul>
     </div>
 </nav>
-
-<!-- سلايد جانبي (Offcanvas) لعرض الملاحظات من الجهة اليسرى -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="noteSlide" aria-labelledby="noteSlideLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="noteSlideLabel">صفحة الملاحظات</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <!-- محتوى صفحة الملاحظات عبر Livewire -->
         @livewire('note.note')
+<!-- نافذة الملاحظات -->
+<div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="noteModalLabel">صفحة الملاحظات</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @livewire('note.main')
+            </div>
+        </div>
     </div>
 </div>

@@ -2,13 +2,13 @@
     <div class="modal-content modal-content-demo">
         <form wire:submit.prevent='add'>
             <div class="modal-header">
-                <h6 class="modal-title cairo-bold">اضافة مشرف جديد</h6> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h6 class="modal-title cairo-bold">اضافة مستخدم جديد</h6> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
-                            <label class="form-label cairo-bold text-bold"> اسم المشرف
+                            <label class="form-label cairo-bold text-bold"> اسم المستخدم
                             </label>
                             <input wire:model="name" type="text" class="form-control cairo-semi-bold" required>
                             @error('name')
