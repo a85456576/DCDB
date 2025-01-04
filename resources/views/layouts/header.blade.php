@@ -15,6 +15,7 @@ function logout()
             <i class="mdi mdi-menu mdi-24px"></i>
         </a>
     </div>
+    <!--  icons -->
     <div class="d-flex gap-4 px-2">
         <div class="d-flex gap-2">
             <button class="btn text-black fs-5 px-0" type="button"
@@ -33,7 +34,7 @@ function logout()
             </a>
         </div>
     </div>
-
+    <!--  قائمة المشرف -->
     <div style="width: 100% !important;" class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
             @php
