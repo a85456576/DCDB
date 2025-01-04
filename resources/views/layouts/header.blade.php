@@ -7,9 +7,9 @@ function logout()
 }
 ?>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<nav style="width: 100% !important; border-radius: 0px !important;" class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white pt-3 pb-3 px-3"
-    id="layout-navbar"
-    style="background-color: #fff !important; z-index:100 !important;">
+<nav style="width: 100% !important; border-radius: 0px !important;"
+    class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white pt-3 pb-3 px-3"
+    id="layout-navbar" style="background-color: #fff !important; z-index:100 !important;">
     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
         <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
             <i class="mdi mdi-menu mdi-24px"></i>
@@ -20,18 +20,16 @@ function logout()
             <button class="btn text-black fs-5 px-0" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-
                 data-bs-toggle="offcanvas" data-bs-target="#noteSlide">
-                data-bs-toggle="modal" data-bs-target="#noteModal">
-                <i class="bi bi-list-check"></i>
+                <i class="bi bi-sticky"></i>
             </button>
         </div>
         <div class="d-flex gap-2">
             <a class="btn text-black fs-5 px-0 dropdown-item modal-effect" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-                data-bs-toggle="modal" data-bs-target="#noteModal">
-                <i class="bi bi-sticky"></i>
+                data-bs-toggle="offcanvas" data-bs-target="#noteModal">
+                <i class="bi bi-list-check"></i>
             </a>
         </div>
     </div>
@@ -42,7 +40,8 @@ function logout()
                 $user = auth()->user();
             @endphp
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                <a class="nav-link dropdown-toggle hide-arrow d-flex" href="javascript:void(0);" data-bs-toggle="dropdown">
+                <a class="nav-link dropdown-toggle hide-arrow d-flex" href="javascript:void(0);"
+                    data-bs-toggle="dropdown">
                     <div class="d-flex align-items-center text-end">
                         <div class="me-2">
                             <span class="fw-bold d-block">{{ auth()->user()->name }}</span>
@@ -108,24 +107,13 @@ function logout()
         </ul>
     </div>
 </nav>
+<!-- نافذة الملاحظات -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="noteSlide" aria-labelledby="noteSlideLabel">
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="noteSlideLabel">صفحة الملاحظات</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        @livewire('note.note')
-<!-- نافذة الملاحظات -->
-<div class="modal fade" id="noteModal" tabindex="-1" aria-labelledby="noteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="noteModalLabel">صفحة الملاحظات</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                @livewire('note.main')
-            </div>
-        </div>
+        @livewire('note.main')
     </div>
 </div>
