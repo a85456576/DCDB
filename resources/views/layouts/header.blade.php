@@ -29,10 +29,12 @@ function logout()
             <a class="btn text-black fs-5 px-0 dropdown-item modal-effect" type="button"
                 onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                 onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-                data-bs-toggle="offcanvas" data-bs-target="#noteModal">
+                data-bs-toggle="offcanvas" data-bs-target="#taskSidebar">
                 <i class="bi bi-list-check"></i>
             </a>
         </div>
+
+
     </div>
     <!--  قائمة المشرف -->
     <div style="width: 100% !important;" class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
@@ -116,5 +118,14 @@ function logout()
     </div>
     <div class="offcanvas-body">
         @livewire('note.main')
+    </div>
+</div>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="taskSidebar" aria-labelledby="taskSidebarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="taskSidebarLabel">صفحة الملاحظات</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        @livewire('todo.main')
     </div>
 </div>
