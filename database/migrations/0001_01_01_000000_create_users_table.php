@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('password', 255);
             $table->tinyInteger('role')->default(2);
             $table->tinyInteger('status')->default(1);
+            $table->json('access_level')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

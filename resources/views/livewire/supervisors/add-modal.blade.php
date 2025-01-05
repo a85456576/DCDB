@@ -41,25 +41,25 @@
                     <div class="col-12">
                         <label class="form-label cairo-bold">الصلاحيات</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="download">
+                            <input  wire:model="permissions" value="Download" class="form-check-input" type="checkbox" id="download">
                             <label class="form-check-label" for="download">
                                 تنزيل
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="add">
+                            <input wire:model="permissions" value="Create" class="form-check-input" type="checkbox" id="add">
                             <label class="form-check-label" for="add">
                                 إضافة
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="delete">
+                            <input wire:model="permissions" value="Delete" class="form-check-input" type="checkbox" id="delete">
                             <label class="form-check-label" for="delete">
                                 حذف
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="edit">
+                            <input wire:model="permissions" value="Update" class="form-check-input" type="checkbox" id="edit">
                             <label class="form-check-label" for="edit">
                                 تعديل
                             </label>

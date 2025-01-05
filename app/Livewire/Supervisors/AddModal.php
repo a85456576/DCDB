@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Supervisors;
 
+use App\Models\permission;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -18,6 +19,8 @@ class AddModal extends Component
     #[Validate('required|max:30|unique:users,email')]
     public $email;
 
+    public $permissions = [];
+
     public function render()
     {
         return view('livewire.supervisors.add-modal');
@@ -32,8 +35,8 @@ class AddModal extends Component
             'password' => Hash::make($this->password),
             'status' => 1,
             'role' => 2,
+            'access_level' => json_encode($this->permissions),
         ]);
-
         $this->reset(['name', 'password', 'email']);
         $this->dispatch('addSupervisor');
     }

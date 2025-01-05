@@ -16,8 +16,11 @@
                             <span> {{ $supervisor->email }}</span>
                         </div>
                         <div class="user-progress d-flex align-items-center gap-1">
-                            <button class="btn btn-info d-none px-2 py-1 d-sm-block  m-0" wire:click='showDetails'>
+                            <a style="color: #fff;" class=" btn btn-info d-none px-2 py-1 d-sm-block  m-0" href="{{ route('companies') }}" >
                                 <i class="mdi mdi-eye-circle-outline"></i>
+                            </a>
+                            <button class="btn btn-info d-none px-2 py-1 d-sm-block  m-0" wire:click='showDetails'>
+                                <span class="mdi mdi-circle-edit-outline"></span>
                             </button>
                         </div>
                     </div>

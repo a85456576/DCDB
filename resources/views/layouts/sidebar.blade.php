@@ -29,7 +29,7 @@
             </li>
         @endif
         <li class="menu-item">
-            <a href="{{ route('docs')}}"
+            <a href="{{ route('docs') }}"
                 class="menu-link cairo-semi-bold @if (request()->routeIs('docs')) active-parent-link @endif">
                 <i class="menu-icon tf-icons mdi  mdi mdi-face-agent"></i>
                 <div>docs</div>

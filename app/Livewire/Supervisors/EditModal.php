@@ -19,6 +19,7 @@ class EditModal extends Component
     public $email;
     public $password;
     public $supervisor;
+    public $permissions=[];
 
     protected function rules()
     {
@@ -37,6 +38,8 @@ class EditModal extends Component
         $this->supervisor = User::find($parameters['id']);
         $this->name = $this->supervisor->name;
         $this->email = $this->supervisor->email;
+        $this->permissions = json_decode($this->supervisor->access_level);
+
     }
 
     public function render()
@@ -57,6 +60,7 @@ class EditModal extends Component
             'name' => $this->name,
             'email' => $this->email,
             'password' => $newPassword,
+            'access_level'=> json_encode($this->permissions),
         ]);
 
         $this->reset(['name', 'password', 'email']);
