@@ -5,19 +5,20 @@
             <input type="text" class="form-control border-1 w-100" placeholder="ابحث عن مهام...">
         </div>
     </div>
-
     <div class="my-5 py-3">
-        @if (!empty($tasks))
+        @if (empty($tasks))
             <div class="text-center">
                 <i class="bi bi-sticky text-secondary" style="font-size: 3rem;"></i>
                 <p class="text-secondary mt-3">لا توجد اي مهام مضافة</p>
             </div>
         @else
+        @foreach ($tasks as $task)
             <div class="list-group">
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0"> مهمة جديدة</h5>
+                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">{{ $task->title }}</h5>
+                    </div>
                 </div>
-            </div>
+                @endforeach
         @endif
     </div>
 
@@ -39,7 +40,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    @livewire('todo.create-todo')
+                    @livewire('todos.add-modal')
                 </div>
             </div>
         </div>

@@ -32,6 +32,7 @@
         $("#editDetailsModal").modal('hide');
         $("#removeModal").modal('hide');
         $("#profileModal").modal('hide');
+        $("#addNoteModal").modal('hide');
     });
 
 </script>

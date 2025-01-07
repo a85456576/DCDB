@@ -1,0 +1,123 @@
+<div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <nav style="width: 100% !important; border-radius: 0px !important;"
+        class="layout-navbar navbar navbar-expand-xl align-items-center justify-content-between bg-white pt-3 pb-3 px-3"
+        id="layout-navbar" style="background-color: #fff !important; z-index:100 !important;">
+        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                <i class="mdi mdi-menu mdi-24px"></i>
+            </a>
+        </div>
+        <!--  icons -->
+        <div class="d-flex gap-4 px-2">
+            <div class="d-flex gap-2">
+                <button class="btn text-black fs-5 px-0" type="button"
+                    onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
+                    onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
+                    data-bs-toggle="offcanvas" wire:click='openNotes' data-bs-target="#noteSlide">
+                    <i class="bi bi-sticky"></i>
+                </button>
+            </div>
+            <div class="d-flex gap-2">
+                <a class="btn text-black fs-5 px-0 dropdown-item modal-effect" type="button"
+                    onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
+                    onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
+                    data-bs-toggle="offcanvas" wire:click='openTodos' data-bs-target="#taskSidebar">
+                    <i class="bi bi-list-check"></i>
+                </a>
+            </div>
+
+
+        </div>
+        <!--  قائمة المشرف -->
+        <div style="width: 100% !important;" class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+                @php
+                    $user = auth()->user();
+                @endphp
+                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                    <a class="nav-link dropdown-toggle hide-arrow d-flex" href="javascript:void(0);"
+                        data-bs-toggle="dropdown">
+                        <div class="d-flex align-items-center text-end">
+                            <div class="me-2">
+                                <span class="fw-bold d-block">{{ auth()->user()->name }}</span>
+                                <small class="text-muted">{{ auth()->user()->email }}</small>
+                            </div>
+                        </div>
+                        <div class="avatar avatar-online d-flex flex-1">
+                            @if (!empty($user->profile->photo))
+                                <img src="{{ asset('/public/public/storage/profileImages/' . $user->profile->photo) }}"
+                                    alt="profile image" class="w-px-40 h-auto rounded-circle" />
+                            @else
+                                <img src="{{ asset('assets/img/avatars/1.png') }}" alt="profile image"
+                                    class="w-px-40 h-auto rounded-circle" />
+                            @endif
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="pages-account-settings-account.html">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="avatar avatar-online">
+                                            @if (!empty($user->profile->photo))
+                                                <img src="{{ asset('/public/public/storage/profileImages/' . $user->profile->photo) }}"
+                                                    alt class="w-px-40 h-auto rounded-circle" />
+                                            @else
+                                                <img src="{{ asset('assets/img/avatars/1.png') }}" alt
+                                                    class="w-px-40 h-px-40 rounded-circle" />
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <span
+                                            class="fw-medium d-block cairo-semi-bold">{{ auth()->user()->name }}</span>
+                                        <small class="text-muted cairo-semi-bold">
+                                            @if (auth()->user()->role == 2)
+                                                مستخدم
+                                            @elseif(auth()->user()->role == 1)
+                                                مشرف
+                                            @endif
+                                        </small>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item modal-effect" data-bs-effect="effect-scale" data-bs-toggle="modal"
+                                href="#profileModal">
+                                <i class="mdi mdi-account-outline me-2"></i>
+                                <span class="align-middle cairo-semi-bold">الملف الشخصي</span>
+                            </a>
+                        </li>
+                        <li>
+                            @livewire('logout')
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- نافذة الملاحظات -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="noteSlide" aria-labelledby="noteSlideLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="noteSlideLabel">صفحة الملاحظات</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            @livewire('notes.main')
+        </div>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="taskSidebar" aria-labelledby="taskSidebarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="taskSidebarLabel">صفحة المهام</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            @livewire('todos.main')
+        </div>
+    </div>
+</div>

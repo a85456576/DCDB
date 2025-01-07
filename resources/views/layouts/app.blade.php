@@ -23,7 +23,8 @@
                 <!-- لا يتم تضمين الـ sidebar هنا -->
             @endif
             <div class="layout-page p-0">
-                @include('layouts.header') <!-- header يأخذ عرض الصفحة بالكامل -->
+                {{-- @include('layouts.header') <!-- header يأخذ عرض الصفحة بالكامل --> --}}
+                @livewire('noheader.main')
                 <div class="content-wrapper">
                     <div class="container-xxl flex-grow-1 container-p-y" style="padding-inline: 14px; width: 100%;">
                         {{ $slot }}
@@ -32,14 +33,14 @@
                 </div>
             </div>
         </div>
-       
+
     </div>
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
     <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-hidden="true">
         @livewire('profile.main')
     </div>
     <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-hidden="true wire:ignore ">
-        @livewire('note.main')
+        @livewire('notes.main')
     </div>
 
     @include('layouts.script')

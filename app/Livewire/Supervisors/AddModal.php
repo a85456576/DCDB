@@ -37,7 +37,7 @@ class AddModal extends Component
             'role' => 2,
             'access_level' => json_encode($this->permissions),
         ]);
-        $this->reset(['name', 'password', 'email']);
+        $this->reset(['name', 'password', 'email','permissions']);
         $this->dispatch('addSupervisor');
     }
 }

@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+
     protected $guarded = ['id', 'create_at', 'update_at'];
 
     protected $hidden = [
@@ -22,5 +23,16 @@ class User extends Authenticatable
         return [
             'password' => 'hashed',
         ];
+    }
+
+
+    public function note()
+    {
+        return $this->hasMany(Note::class, 'user_id', 'id');
+    }
+
+    public function todo()
+    {
+        return $this->hasMany(Todo::class, 'user_id', 'id');
     }
 }

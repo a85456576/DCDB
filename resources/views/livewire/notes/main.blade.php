@@ -5,7 +5,6 @@
             <input type="text" class="form-control border-1 w-100" placeholder="ابحث عن ملاحظة...">
         </div>
     </div>
-
     <div class="text-center my-5 py-3">
         @if (empty($notes))
             <i class="bi bi-sticky text-secondary" style="font-size: 3rem;"></i>
@@ -13,7 +12,7 @@
         @else
             <ul class="list-group">
                 @foreach ($notes as $note)
-                    <li class="list-group-item">{{ $note['content'] }}</li>
+                    <li class="list-group-item">{{ $note->title }}</li>
                 @endforeach
             </ul>
         @endif
@@ -37,7 +36,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    @livewire('note.create-note')
+                    @livewire('notes.add-modal')
                 </div>
             </div>
         </div>
