@@ -30,9 +30,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Note::class, 'user_id', 'id');
     }
-
     public function todo()
     {
         return $this->hasMany(Todo::class, 'user_id', 'id');
+
+    }
+    public function documents()
+    {
+        return $this->hasMany(Document::class, 'user_id', 'id');
     }
 }

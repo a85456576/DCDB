@@ -27,54 +27,33 @@
 
         <!-- قسم عرض الأخبار -->
         <div class="row">
-                <div class="col-md-6 col-xl-4 col-12 mt-3">
-                    <div class="card h-fit shadow-none border">
-                        <!-- صورة الخبر -->
-                        <div class="rounded-2 text-center" style="position: relative;">
-                            <img class="img-fluid rounded-2" style="height: 220px; width:100%"
-                                src="" alt="صورة الخبر" />
-                            {{-- <div class="bg-white"
-                                    style="
-                                position: absolute;
-                                left: 6%;
-                                top: 92%;
-                                border-radius: 6px;
-                                padding: 5px;
-                                color: black;
-                                background: gray;
-                                border: 1px solid gray;
-                                padding-left:6px;
-                                padding-right: 6px;">
-                                </div> --}}
-                        </div>
-                        <!-- تفاصيل الخبر -->
-                        <div class="card-body" style="height: fit-content !important;" dir="rtl">
-                            <div
-                                class="d-flex flex-column flex-md-row gap-3 text-nowrap flex-wrap flex-md-nowrap flex-lg-wrap flex-xxl-nowrap">
-                                <!-- زر "المزيد" -->
-                                <a class="w-100 btn btn-outline-secondary d-flex align-items-center modal-effect"
-                                    href="{{ route('docs')}}" style="border: green 1px solid;">
-                                    <i class="mdi mdi-sync align-middle me-1"></i>
-                                    <span class="cairo-semi-bold">المزيد</span>
-                            </a>
-
-                                <!-- زر "تعديل" -->
-                                <button class="w-100 btn btn-outline-primary d-flex align-items-center modal-effect"
-                                    data-bs-toggle="modal" data-bs-target="#editModal" data-bs-effect="effect-scale">
-                                    <span class="me-1 cairo-semi-bold">تعديل</span>
-                                    <i class="mdi mdi-arrow-right lh-1 scaleX-n1-rtl"></i>
-                                </button>
-
-                                <!-- زر "حذف" -->
-                                <button class="w-100 btn btn-outline-danger d-flex align-items-center"
-                                    style="border: solid 1px red;">
-                                    <span class="me-1 cairo-semi-bold" style="color: red;">حذف</span>
-                                    <i class="mdi mdi--right lh-1 scaleX-n1-rtl"></i>
-                                </button>
-                            </div>
+            <div class="col-md-6 col-xl-4 col-12 mt-3">
+                <div class="card h-fit shadow-none border">
+                    <!-- صورة الخبر -->
+                    <div class="rounded-2 text-center" style="position: relative;">
+                        <img class="img-fluid rounded-2" style="height: 220px; width:100%" src=""
+                            alt="صورة الخبر" />
+                    </div>
+                    <!-- تفاصيل الخبر -->
+                    <div class="card-body" style="height: fit-content !important;" dir="rtl">
+                        <div
+                            class="d-flex flex-column flex-md-row gap-3 text-nowrap flex-wrap flex-md-nowrap flex-lg-wrap flex-xxl-nowrap">
+                            <!-- زر "تعديل" -->
+                            <button class="w-100 btn btn-outline-primary d-flex align-items-center modal-effect"
+                                data-bs-toggle="modal" data-bs-target="#editModal" data-bs-effect="effect-scale">
+                                <span class="me-1 cairo-semi-bold">تعديل</span>
+                                <i class="mdi mdi-arrow-right lh-1 scaleX-n1-rtl"></i>
+                            </button>
+                            <!-- زر "حذف" -->
+                            <button class="w-100 btn btn-outline-danger d-flex align-items-center"
+                                style="border: solid 1px red;">
+                                <span class="me-1 cairo-semi-bold" style="color: red;">حذف</span>
+                                <i class="mdi mdi--right lh-1 scaleX-n1-rtl"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
 
         </div>
     </div>
@@ -95,9 +74,9 @@
     </div>
 
     <!-- نافذة قراءة المزيد -->
-    <div class="read-more-section" wire:ignore>
+    {{-- <div class="read-more-section" wire:ignore>
         <div class="modal fade" id="read-more-modal" tabindex="-1" role="dialog" aria-hidden="true">
             @livewire('companies.read-more-modal')
         </div>
-    </div>
+    </div> --}}
 </div>

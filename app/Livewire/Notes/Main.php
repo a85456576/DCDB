@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Notes;
 
-
+use App\Models\Note;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\On;
@@ -21,8 +21,12 @@ class Main extends Component
     #[On('openNotesCanvas')]
     public function render()
     {
-
-        $this->note = Auth::user()->note;
+        if ($this->search) {
+            $this->note = Note::where([['user_id', Auth::id()], ['title', 'LIKE', '%' . $this->search . '%']])
+                ->get();
+        } else {
+            $this->note = Note::where('user_id', Auth::id())->get();
+        }
         // dd( Note::get());
         return view('livewire.notes.main', [
             'notes' => $this->note,

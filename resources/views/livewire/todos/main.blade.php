@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-between align-items-center p-3">
         <div class="d-flex align-items-center w-100">
             <i class="bi bi-search fs-5 text-secondary me-3"></i>
-            <input type="text" class="form-control border-1 w-100" placeholder="ابحث عن مهام...">
+            <input wire:model.live.debounce.500ms='search' type="text" class="form-control border-1 w-100" placeholder="ابحث عن مهام...">
         </div>
     </div>
     <div class="my-5 py-3">

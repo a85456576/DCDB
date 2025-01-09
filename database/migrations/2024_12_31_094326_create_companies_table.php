@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('cascade');
             $table->string('company_name',120);
             $table->string('manager_name',120);
             $table->time('found_date');
-
             $table->timestamps();
         });
     }

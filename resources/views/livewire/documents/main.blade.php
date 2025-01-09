@@ -126,9 +126,9 @@
         </div>
     </div>
 
-    <div class="read-more-section" wire:ignore>
+    {{-- <div class="read-more-section" wire:ignore>
         <div class="modal fade" id="read-more-modal" tabindex="-1" role="dialog" aria-hidden="true">
             @livewire('documents.read-more-modal')
         </div>
-    </div>
+    </div> --}}
 </div>

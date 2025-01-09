@@ -36,7 +36,7 @@ class EditModal extends Component
     {
         $this->validate();
 
-        $this->supervisor->update([
+        $this->todo->update([
             'title' => $this->title,
             'description' => $this->description,
             'dueDate' => $this->dueDate,

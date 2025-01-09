@@ -33,7 +33,7 @@ class EditModal extends Component
     {
         $this->validate();
 
-        $this->supervisor->update([
+        $this->note->update([
             'title' => $this->title,
             'content' => $this->content,
         ]);
