@@ -16,6 +16,7 @@ class Categories extends Component
     {
         $this->validate([
             'name' => 'required|min:3|max:25|string|regex:/^[a-zA-Z\s]+$/'
+            
         ]);
         $this->short = Str::upper(Str::substr($this->name,0,3));
         Categories::create([
