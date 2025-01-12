@@ -14,7 +14,7 @@
                 <button class="btn text-black fs-5 px-0" type="button"
                     onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                     onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-                    data-bs-toggle="offcanvas" wire:click='openNotes' data-bs-target="#noteSlide">
+                    data-bs-toggle="offcanvas"  data-bs-target="#noteSlide">
                     <i class="bi bi-sticky"></i>
                 </button>
             </div>
@@ -22,7 +22,7 @@
                 <a class="btn text-black fs-5 px-0 dropdown-item modal-effect" type="button"
                     onmouseover="this.firstElementChild.style.transform = 'scale(1.2)'; this.firstElementChild.style.color = '#007bff';"
                     onmouseout="this.firstElementChild.style.transform = 'scale(1)'; this.firstElementChild.style.color = '';"
-                    data-bs-toggle="offcanvas" wire:click='openTodos' data-bs-target="#taskSidebar">
+                    data-bs-toggle="offcanvas"  data-bs-target="#taskSidebar">
                     <i class="bi bi-list-check"></i>
                 </a>
             </div>
